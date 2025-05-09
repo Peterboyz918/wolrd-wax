@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Peter Ngigi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('images/1.jpeg'); background-size: cover; background-position: center;">
+
+  <header class="main-header">
+    <img src="images/3.png" alt="Logo" class="logo" />
+    <nav>
+      <ul class="nav-tabs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-section">
+    <h1>Contact Me</h1>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h2>Leave a Review</h2>
+    <form id="reviewForm">
+      <input type="text" placeholder="Your Name" required />
+      <textarea placeholder="Write your review..." required></textarea>
+      <label for="rating">Your Rating:</label>
+      <select id="rating" required>
+        <option value="">--Select--</option>
+        <option value="⭐">⭐</option>
+        <option value="⭐⭐">⭐⭐</option>
+        <option value="⭐⭐⭐">⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+      </select>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="reviews">
+      <h3>Client Reviews</h3>
+      <ul id="reviewList"></ul>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = this.querySelector("input[type='text']").value;
+      const review = this.querySelector("textarea").value;
+      const rating = document.getElementById("rating").value;
+      const li = document.createElement("li");
+      li.textContent = `${name}: ${review} ${rating}`;
+      document.getElementById("reviewList").appendChild(li);
+      this.reset();
+    });
+  </script>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>

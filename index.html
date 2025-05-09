@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peter Ngigi Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('images/1.jpeg'); background-size: cover; background-position: center;">
+
+  <header class="main-header">
+    <img src="images/3.png" alt="Logo" class="logo" />
+    <nav>
+      <ul class="nav-tabs">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home-content">
+    <h1>Hi, I'm Peter Ngigi</h1>
+    <p>A Web Developer, AI Enthusiast, and Cyber Solutions Provider based in Mombasa, Kenya.</p>
+    <a href="contact.html" class="hire-btn">Request a Service</a>
+  </main>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <button id="chat-icon">🤖</button>
+    <div id="chat-window" class="hidden">
+      <div id="chat-log"></div>
+      <input type="text" id="chat-input" placeholder="Ask me anything..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
